@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:eWohnung="clr-namespace:eWohnung;assembly=eWohnung"
+             x:Class="eWohnung.HomePage"
+             BindingContext="{Binding Source={StaticResource Locator}, Path=Main}"
+             BackgroundColor="#812013"
+             Title="Dashboard">
+
+  <StackLayout>
+    <Grid x:Name="RootGrid" Padding="2,2" RowSpacing="2" ColumnSpacing="2" BackgroundColor="#F3E8E8"
+          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+          IsVisible="{Binding IsLoading, Converter={StaticResource NegateBoolean}}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <eWohnung:QuickAccess
+        Grid.Row="0"
+        Grid.Column="0"
+        QuickCommand="{Binding GoToListCommand}"
+        QuickIcon="list_icon.png"
+        QuickTitle="List"/>
+
+      <eWohnung:QuickAccess
+        Grid.Row="0"
+        Grid.Column="1"
+        QuickCommand="{Binding GoToSearchCommand}"
+        QuickIcon="search_icon.png"
+        QuickTitle="Search"/>
+
+      <eWohnung:QuickAccess
+        Grid.Row="1"
+        Grid.Column="0"
+        QuickCommand="{Binding GoToMapCommand}"
+        QuickIcon="map_icon.png"
+        QuickTitle="Map"/>
+
+      <eWohnung:QuickAccess
+        Grid.Row="1"
+        Grid.Column="1"
+        QuickCommand="{Binding GoToSettingsCommand}"
+        QuickIcon="settings_icon.png"
+        QuickTitle="Settings"/>
+
+
+    </Grid>
+
+    <ActivityIndicator 
+      IsVisible="{Binding IsLoading}"
+      IsRunning="{Binding IsLoading}"
+      Scale="1"
+      Opacity="1"
+      HorizontalOptions="CenterAndExpand" 
+      VerticalOptions="CenterAndExpand" />
+    
+  </StackLayout>
+</ContentPage>

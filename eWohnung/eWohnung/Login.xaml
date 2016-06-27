@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:eWohnung="clr-namespace:eWohnung;assembly=eWohnung"
+             x:Class="eWohnung.Login"
+             BackgroundColor="#812013">
+  
+  <StackLayout Spacing="60" >
+    <Image Aspect="AspectFit" HeightRequest="150" Source="logo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" />
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" WidthRequest="200" RowSpacing="20">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="1.5*" />
+      </Grid.RowDefinitions>
+
+      <Entry Grid.Row="0" x:Name="UsernameEntry" Placeholder="Username" WidthRequest="80" />
+      <Entry Grid.Row="1" x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" WidthRequest="80" />
+      <Button x:Name="ButtonLogin" Grid.Row="2" Text="Login" Clicked="Button_OnClicked" WidthRequest="80" 
+              
+              TextColor="#812013" BackgroundColor="#F3E8E8"/>
+
+      <ActivityIndicator x:Name="ActivityIndicator" Grid.Row="2" Scale="1" />
+    </Grid>
+  </StackLayout>
+  
+</ContentPage>

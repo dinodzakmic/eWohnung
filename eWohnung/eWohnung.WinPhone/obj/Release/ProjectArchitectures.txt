@@ -1,0 +1,2 @@
+C:\Users\CodeNest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.WinPhone\AlenTest.WinPhone.csproj;neutral
+C:\Users\CodeNest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest\AlenTest.csproj;neutral

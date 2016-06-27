@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application x:Class="eWohnung.App"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:eWohnung.ViewModel;assembly=eWohnung"
+             xmlns:converters="clr-namespace:eWohnung.Framework.Converters;assembly=eWohnung">
+  
+  <Application.Resources>
+    <ResourceDictionary>
+      <viewModel:ViewModelLocator x:Key="Locator"/>
+      <converters:NegateBooleanConverter x:Key="NegateBoolean" /> 
+    </ResourceDictionary>
+  </Application.Resources>
+  
+  </Application>

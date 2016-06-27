@@ -1,0 +1,17 @@
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\AlenTestiOS.exe
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\AlenTestiOS.pdb
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\AlenTest.dll
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.dll
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.dll
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Xaml.dll
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\AlenTest.pdb
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.xml
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Xaml.xml
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\obj\iPhoneSimulator\Debug\optimized\
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\obj\iPhoneSimulator\Debug\AlenTest.iOS.csprojResolveAssemblyReference.cache
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\obj\iPhoneSimulator\Debug\AlenTestiOS.exe
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\obj\iPhoneSimulator\Debug\AlenTestiOS.pdb
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\obj\iPhoneSimulator\Debug\AlenTestiOS.exe.mdb
+c:\users\codenest\documents\visual studio 2015\Projects\AlenTest\AlenTest\AlenTest.iOS\bin\iPhoneSimulator\Debug\AlenTestiOS.exe.mdb
