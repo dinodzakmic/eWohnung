@@ -25,28 +25,28 @@
         Grid.Column="0"
         QuickCommand="{Binding GoToListCommand}"
         QuickIcon="list_icon.png"
-        QuickTitle="List"/>
+        QuickTitle="List" />
 
       <eWohnung:QuickAccess
         Grid.Row="0"
         Grid.Column="1"
         QuickCommand="{Binding GoToSearchCommand}"
         QuickIcon="search_icon.png"
-        QuickTitle="Search"/>
+        QuickTitle="Search" />
 
       <eWohnung:QuickAccess
         Grid.Row="1"
         Grid.Column="0"
         QuickCommand="{Binding GoToMapCommand}"
         QuickIcon="map_icon.png"
-        QuickTitle="Map"/>
+        QuickTitle="Map" />
 
       <eWohnung:QuickAccess
         Grid.Row="1"
         Grid.Column="1"
         QuickCommand="{Binding GoToSettingsCommand}"
         QuickIcon="settings_icon.png"
-        QuickTitle="Settings"/>
+        QuickTitle="Settings" />
 
 
     </Grid>

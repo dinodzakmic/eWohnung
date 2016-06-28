@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using eWohnung.Model;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 
@@ -10,8 +11,7 @@ namespace eWohnung
 {
     public partial class Login : ContentPage
     {
-        public string UsernameJson;
-        public string PasswordJson;
+
         public Login()
         {
             InitializeComponent();
@@ -19,38 +19,8 @@ namespace eWohnung
 
         private async void Button_OnClicked(object sender, EventArgs e)
         {
-            await LoginTask(UsernameEntry.Text, PasswordEntry.Text);
-        }
-
-        public async Task LoginTask(string username, string password)
-        {
-            string url = @"http://81.169.153.223:8080/eWohnung-service/service/login/username/test/password/test";
-            var json = Task.Run(async () => await new HttpClient().GetStringAsync(url)).Result;
-
-            Debug.WriteLine(json);
-            var test = JObject.Parse(json);
-            UsernameJson = (string) test["username"];
-            PasswordJson = (string) test["password"];
-
-            ActivityIndicator.IsRunning = true;
-            ButtonLogin.IsVisible = false;
-            await Task.Delay(TimeSpan.FromSeconds(2));
-
-            if (username != null && username.Equals(UsernameJson) && password.Equals(PasswordJson))
-            {
-                ActivityIndicator.IsRunning = false;
-                await Navigation.PushAsync(new HomePage(), true);
-                //Application.Current.MainPage = new ListaTest();
-                ButtonLogin.IsVisible = true;
-            }
-            else
-            {
-                ActivityIndicator.IsRunning = false;
-                await DisplayAlert("Error", "Username or password incorrect!", "OK");
-                ButtonLogin.IsVisible = true;
-            }
-
-
+            var user = new User(UsernameEntry.Text, PasswordEntry.Text);
+            await App.Locator.Login.LoginTask(user);
         }
 
         protected override void OnDisappearing()

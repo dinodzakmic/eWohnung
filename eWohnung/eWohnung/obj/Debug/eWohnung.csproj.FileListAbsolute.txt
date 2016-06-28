@@ -32,7 +32,3 @@ C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnu
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung\bin\Debug\eWohnung.dll.config
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung\obj\Debug\eWohnung.dll.mdb
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung\bin\Debug\eWohnung.dll.mdb
-C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung\obj\Debug\eWohnung.dll.mdb
-C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung\bin\Debug\eWohnung.dll.mdb
-C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung\obj\Debug\eWohnung.dll.mdb
-C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung\bin\Debug\eWohnung.dll.mdb

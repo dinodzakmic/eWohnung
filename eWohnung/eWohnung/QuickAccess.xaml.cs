@@ -27,6 +27,7 @@ namespace eWohnung
                 propertyChanged: (b, o, n) =>
                 {
                     ((QuickAccess)b).GestureRecognizer.Command = (Command)n;
+                    ((QuickAccess)b).GestureRecognizer.CommandParameter = (QuickAccess)b;
                 }
             );
         #endregion
@@ -37,6 +38,7 @@ namespace eWohnung
             set { SetValue(QuickCommandProperty, value); }
         }
         #endregion
+
 
         #region QuickIconProperty
         public static BindableProperty QuickIconProperty = BindableProperty.Create

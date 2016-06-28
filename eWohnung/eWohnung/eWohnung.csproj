@@ -52,10 +52,12 @@
       <DependentUpon>MapaTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Stanovi.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickAccess.xaml.cs">
       <DependentUpon>QuickAccess.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\StanViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
