@@ -58,6 +58,9 @@ C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnu
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\obj\Debug\res\drawable\logo.png
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\obj\Debug\R.cs.flag
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\obj\Debug\uploadflags.txt
+C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\bin\Debug\eWohnung.Droid.dll.config
+C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\bin\Debug\Newtonsoft.Json.xml
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\bin\Debug\eWohnung.dll.mdb
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\obj\Debug\eWohnung.Droid.dll.mdb
 C:\Users\CodeNest\Documents\Visual Studio 2015\Projects\eWohnung\eWohnung\eWohnung.Droid\bin\Debug\eWohnung.Droid.dll.mdb

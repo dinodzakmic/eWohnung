@@ -1,4 +1,8 @@
-﻿using eWohnung.ViewModel;
+﻿using System.Diagnostics;
+using System.Net.Http;
+using System.Threading.Tasks;
+using eWohnung.ViewModel;
+using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 
 namespace eWohnung
@@ -10,7 +14,7 @@ namespace eWohnung
 
         public App()
         {
-            InitializeComponent();
+            InitializeComponent();           
 
             NavPage = new NavigationPage(new Login());
             Locator = new ViewModelLocator();
