@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -25,26 +26,35 @@ namespace eWohnung.ViewModel
 
         public async Task LoginTask(User user)
         {
-            string url = @"http://81.169.153.223:8080/eWohnung-service/service/login/username/test/password/test";
-            var json = await new HttpClient().GetStringAsync(url);
-
-            var testniUser = JObject.Parse(json);
-            UsernameJson = (string)testniUser["username"];
-            PasswordJson = (string)testniUser["password"];
-
-            IsLoading = true;
-            await Task.Delay(TimeSpan.FromSeconds(1));
-
-            if (user.GetUsername() != null && user.GetUsername().Equals(UsernameJson) && user.GetPassword().Equals(PasswordJson))
+            try
             {
-                IsLoading = false;
-                await App.NavPage.Navigation.PushAsync(new HomePage());
+                string url = @"http://81.169.153.223:8080/eWohnung-service/service/login/username/test/password/test";
+                var json = await new HttpClient().GetStringAsync(url);
+
+                var testniUser = JObject.Parse(json);
+                UsernameJson = (string)testniUser["username"];
+                PasswordJson = (string)testniUser["password"];
+
+                IsLoading = true;
+                await Task.Delay(TimeSpan.FromSeconds(1));
+
+                if (user.GetUsername() != null && user.GetUsername().Equals(UsernameJson) && user.GetPassword().Equals(PasswordJson))
+                {
+                    IsLoading = false;
+                    await App.NavPage.Navigation.PushAsync(new HomePage());
+                }
+                else
+                {
+                    IsLoading = false;
+                    await App.NavPage.CurrentPage.DisplayAlert("Error", "Username or password incorrect!", "OK");
+                }
             }
-            else
+            catch (WebException we)
             {
-                IsLoading = false;
-                await App.NavPage.CurrentPage.DisplayAlert("Error", "Username or password incorrect!", "OK");
+                if(we.Status == WebExceptionStatus.ConnectFailure)
+                    await App.NavPage.CurrentPage.DisplayAlert("Greska", "Provjerite konekciju!", "OK");
             }
+           
 
         }
     }
