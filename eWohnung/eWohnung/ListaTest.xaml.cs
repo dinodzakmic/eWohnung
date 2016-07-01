@@ -16,9 +16,9 @@ namespace eWohnung
             AlenTestLista.BeginRefresh();
 
             string filter = AlenSearchBar.Text;
-            AlenTestLista.ItemsSource = filter == null 
-                ? App.Locator.Stan.ListaStanova 
-                : App.Locator.Stan.ListaStanova.Where(s => s.Name.ToLower().Contains(filter.ToLower())).ToList();
+            AlenTestLista.ItemsSource = filter == null
+                ? App.Locator.Stan.ListaStanova
+                : App.Locator.Stan.ListaStanova.Where(s => s.SifraStana.ToLower().Contains(filter.ToLower())).ToList();
 
             AlenTestLista.EndRefresh();
         }

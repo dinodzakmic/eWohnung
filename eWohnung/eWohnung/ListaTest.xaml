@@ -23,7 +23,7 @@
               <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Image Source="{Binding Photo}"
+            <Image Source="stan_slika_test2.jpg"
                    Aspect="AspectFill"  />
 
             <StackLayout Grid.Column="1"
@@ -32,11 +32,11 @@
                          HorizontalOptions="StartAndExpand"
                          VerticalOptions="CenterAndExpand">
 
-              <Label Text="{Binding Name}"
+              <Label Text="{Binding SifraStana}"
                       FontSize="20"
                       HorizontalTextAlignment="Start" TextColor="#F3E8E8"/>
 
-              <Label Text="{Binding Description}"
+              <Label Text="{Binding UlicaBroj}"
                       FontSize="15"
                       HorizontalTextAlignment="Start" TextColor="#F3E8E8" />
 

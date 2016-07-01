@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using eWohnung.Model;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 
@@ -14,10 +16,17 @@ namespace eWohnung.ViewModel
         #region Commands        
         public ICommand LoginCommand { get; set; }
         #endregion
-        #region Username and password
+        #region UserTest
+        public int Id;
+        public string NameJson;
+        public string SurnameJson;
         public string UsernameJson;
         public string PasswordJson;
-        #endregion 
+        public List<RegioniDjelovanja> RegioniDjelovanjaJson;
+        public string Email;
+        #endregion
+
+        private UserTest UserJson { get; set; }
 
         public LoginViewModel()
         {
@@ -31,14 +40,12 @@ namespace eWohnung.ViewModel
                 string url = @"http://81.169.153.223:8080/eWohnung-service/service/login/username/test/password/test";
                 var json = await new HttpClient().GetStringAsync(url);
 
-                var testniUser = JObject.Parse(json);
-                UsernameJson = (string)testniUser["username"];
-                PasswordJson = (string)testniUser["password"];
+                UserJson = JsonConvert.DeserializeObject<UserTest>(json);
 
                 IsLoading = true;
                 await Task.Delay(TimeSpan.FromSeconds(1));
 
-                if (user.GetUsername() != null && user.GetUsername().Equals(UsernameJson) && user.GetPassword().Equals(PasswordJson))
+                if (user.GetUsername() != null && user.GetUsername().Equals(UserJson.Username) && user.GetPassword().Equals(UserJson.Password))
                 {
                     IsLoading = false;
                     await App.NavPage.Navigation.PushAsync(new HomePage());

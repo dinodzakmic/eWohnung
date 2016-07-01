@@ -16,7 +16,7 @@ namespace eWohnung.Model
             Username = username;
             Password = password;
         }
-
+       
         public string GetUsername()
         {
             return Username;

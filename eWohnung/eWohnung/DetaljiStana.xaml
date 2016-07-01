@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWohnung.DetaljiStana"
+             BindingContext="{Binding Source={StaticResource Locator}, Path=Main}">
+  
+  <StackLayout Padding="10">
+    <Label Text="{Binding Stan.SifraStana}" FontSize="20"/>
+    <Label Text="{Binding Stan.BrojStanaUZgradi}" FontSize="20"/>
+    <Label Text="{Binding Stan.UlicaBroj}" FontSize="20"/>
+    <Label Text="{Binding Stan.UkupnaKvadratura}" FontSize="20"/>  
+  </StackLayout>
+  
+</ContentPage>

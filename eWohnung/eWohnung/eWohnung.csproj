@@ -38,6 +38,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetaljiStana.xaml.cs">
+      <DependentUpon>DetaljiStana.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Framework\Converters\NegateBooleanConverter.cs" />
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -52,7 +55,9 @@
       <DependentUpon>MapaTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Stanovi.cs" />
+    <Compile Include="Model\StanTest.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickAccess.xaml.cs">
       <DependentUpon>QuickAccess.xaml</DependentUpon>
@@ -135,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DetaljiStana.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
