@@ -15,11 +15,11 @@
   <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
   <uses-permission android:name="android.permission.INSTALL_LOCATION_PROVIDER" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <application android:label="eWohnung" android:theme="@style/MyTheme" android:installLocation="auto" android:largeHeap="true" android:allowBackup="true" android:hardwareAccelerated="false" android:name="mono.android.app.Application" android:icon="@drawable/icon" android:debuggable="true">
+  <application android:label="eWohnung" android:theme="@style/MyTheme" android:installLocation="auto" android:largeHeap="true" android:allowBackup="true" android:hardwareAccelerated="false" android:name="mono.android.app.Application" android:icon="@drawable/ewohnung_icon" android:debuggable="true">
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD6whgU9f5PiiSd8TyBVGyE4ekFIf9DLN8" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="eWohnung" android:name="md536dc9111488a6f3e11d36cb379ce5174.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/ewohnung_icon" android:label="eWohnung" android:name="md536dc9111488a6f3e11d36cb379ce5174.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

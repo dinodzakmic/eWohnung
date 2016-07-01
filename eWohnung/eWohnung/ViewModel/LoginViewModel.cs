@@ -73,20 +73,20 @@ namespace eWohnung.ViewModel
         {
             try
             {
-                if (Username.Equals("") && !Password.Equals(""))
+                if (string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
                 {
                     await App.NavPage.DisplayAlert("Error", "Please enter your username!", "OK");
                     return;
                 }
 
 
-                if (!Username.Equals("") && Password.Equals(""))
+                if (!string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(Password))
                 {
                     await App.NavPage.DisplayAlert("Error", "Please enter your password!", "OK");
                     return;
                 }
 
-                if (Username.Equals("") && Password.Equals(""))
+                if (string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(Password))
                 {
                     await App.NavPage.DisplayAlert("Error", "Please enter your username and password!", "OK");
                     return;
@@ -102,7 +102,7 @@ namespace eWohnung.ViewModel
                 
                 await Task.Delay(TimeSpan.FromSeconds(1));
 
-                if (User.GetUsername() != null && User.GetUsername().Equals(UserJson.Username) && User.GetPassword().Equals(UserJson.Password))
+                if (User.GetUsername().Equals(UserJson.Username) && User.GetPassword().Equals(UserJson.Password))
                 {
                     IsLoading = false;
                     Password = null;

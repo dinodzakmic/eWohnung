@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using eWohnung.Model;
@@ -42,7 +43,9 @@ namespace eWohnung.ViewModel
             }
         }
         #endregion
-
+        #region QuickAction
+        public QuickAccess QuickAction { get; set; }
+        #endregion
         #region Commands
 
         public ICommand GoToListCommand { get; set; }
@@ -63,31 +66,17 @@ namespace eWohnung.ViewModel
         {
             if (!IsEnabled) return;
 
-            IsEnabled = false;
-            await quickAction.FadeTo(0.5, 500, Easing.BounceIn);
-            IsLoading = true;
+            QuickAction = quickAction;
             await App.Locator.Stan.DodajStanove();
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            await App.NavPage.Navigation.PushAsync(new ListaTest());
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            IsLoading = false;
-            quickAction.Opacity = 1;
-            
-            IsEnabled = true;
+            await ExecuteNavigation(new ListaTest());
         }
         private async Task GoToMap(QuickAccess quickAction)
         {
             if (!IsEnabled) return;
 
-            IsEnabled = false;
-            await quickAction.FadeTo(0.5, 500, Easing.BounceIn);
-            IsLoading = true;
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            await App.NavPage.Navigation.PushAsync(new MapaTest());
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            IsLoading = false;
-            quickAction.Opacity = 1;
-            IsEnabled = true;
+            QuickAction = quickAction;
+            await ExecuteNavigation(new MapaTest());
+
         }
         private async Task GoToSearch(QuickAccess quickAction)
         {
@@ -116,6 +105,25 @@ namespace eWohnung.ViewModel
             IsLoading = false;
             quickAction.Opacity = 1;
             IsEnabled = true;
-        }       
+        }
+
+        private async Task ExecuteNavigation(Page page)
+        {
+            IsEnabled = false;
+            await QuickAction.FadeTo(0.5, 500, Easing.BounceIn);
+            IsLoading = true;
+            await Task.Delay(TimeSpan.FromMilliseconds(100));
+            CancellationToken canToken = new CancellationToken();
+            await App.NavPage.Navigation.PushAsync(page).ContinueWith(async t =>
+            {
+                if (t.IsCompleted)
+                {
+                    await Task.Delay(TimeSpan.FromMilliseconds(100), canToken);
+                    IsLoading = false;
+                    QuickAction.Opacity = 1;
+                    IsEnabled = true;
+                }
+            }, canToken);
+        }  
     }
 }

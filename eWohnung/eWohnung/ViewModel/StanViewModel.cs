@@ -34,6 +34,7 @@ namespace eWohnung.ViewModel
         {
             try
             {
+                IsLoading = true;
                 IsConnected = true;
                 string url = @"http://81.169.153.223:8080/eWohnung-service/service/stanovi/";
                 var json = await new HttpClient().GetStringAsync(url);
@@ -43,6 +44,7 @@ namespace eWohnung.ViewModel
             {
                 if (we.Status == WebExceptionStatus.ConnectFailure)
                 {
+                    IsLoading = false;
                     IsConnected = false;                   
                 }
             }

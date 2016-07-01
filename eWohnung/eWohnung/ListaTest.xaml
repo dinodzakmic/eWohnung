@@ -10,6 +10,7 @@
     <StackLayout IsVisible="{Binding IsConnected}">
 
       <SearchBar x:Name="AlenSearchBar"
+               Placeholder="Quick search by street"
                Unfocused="VisualElement_OnUnfocused"
                TextChanged="AlenSearchBar_OnTextChanged"/>
 
