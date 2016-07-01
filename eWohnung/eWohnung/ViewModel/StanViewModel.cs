@@ -11,20 +11,19 @@ namespace eWohnung.ViewModel
 {
     public class StanViewModel : MainViewModel
     {
-        public List<StanTest> ListaStanova { get; set; }
-        public StanTest Stan { get; set; }
-        private bool _isConnected;
+        private ObservableCollection<StanTest> _listaStanova;
 
-        public bool IsConnected
+        public ObservableCollection<StanTest> ListaStanova
         {
-            get { return _isConnected; }
+            get { return _listaStanova; }
             set
             {
-                _isConnected = value;
+                _listaStanova = value;
                 RaisePropertyChanged();
             }
         }
-
+        public StanTest Stan { get; set; }
+        
         public StanViewModel()
         {
         }
@@ -38,7 +37,7 @@ namespace eWohnung.ViewModel
                 IsConnected = true;
                 string url = @"http://81.169.153.223:8080/eWohnung-service/service/stanovi/";
                 var json = await new HttpClient().GetStringAsync(url);
-                ListaStanova = JsonConvert.DeserializeObject<List<StanTest>>(json);
+                ListaStanova = JsonConvert.DeserializeObject<ObservableCollection<StanTest>>(json);
             }
             catch (WebException we)
             {

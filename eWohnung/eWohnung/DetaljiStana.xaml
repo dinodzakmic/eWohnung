@@ -19,27 +19,45 @@
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
       </Grid.RowDefinitions>
 
       <Label Text="Broj soba" FontSize="20" Grid.Row="0" Grid.Column="0" />
-      <Label Text="{Binding Stan.BrojSoba}" FontSize="20" 
+      <Label Text="{Binding Stan.BrojSoba}"
+             FontSize="20" FontAttributes="Bold"
              Grid.Row="0" Grid.Column="1"
-             HorizontalTextAlignment="Center"/>
+             HorizontalTextAlignment="End"/>
 
       <Label Text="Broj stana u zgradi" FontSize="20" Grid.Row="1" Grid.Column="0" />
-      <Label Text="{Binding Stan.BrojStanaUZgradi}" FontSize="20" 
+      <Label Text="{Binding Stan.BrojStanaUZgradi}" 
+             FontSize="20" FontAttributes="Bold"
              Grid.Row="1" Grid.Column="1"
-             HorizontalTextAlignment="Center"/>
+             HorizontalTextAlignment="End"/>
 
       <Label Text="Broj ulice" FontSize="20" Grid.Row="2" Grid.Column="0" />
-      <Label Text="{Binding Stan.UlicaBroj}" FontSize="20" 
+      <Label Text="{Binding Stan.UlicaBroj}" 
+             FontSize="20" FontAttributes="Bold"
              Grid.Row="2" Grid.Column="1"
-             HorizontalTextAlignment="Center"/>
+             HorizontalTextAlignment="End"/>
 
       <Label Text="Kvadratura" FontSize="20" Grid.Row="3" Grid.Column="0" />
-      <Label Text="{Binding Stan.UkupnaKvadratura}" FontSize="20" 
+      <Label Text="{Binding Stan.UkupnaKvadratura}" 
+             FontSize="20" FontAttributes="Bold"
              Grid.Row="3" Grid.Column="1"
-             HorizontalTextAlignment="Center"/>
+             HorizontalTextAlignment="End"/>
+
+      <Label Text="Sprat" FontSize="20" Grid.Row="4" Grid.Column="0" />
+      <Label Text="{Binding Stan.Sprat}"
+             FontSize="20" FontAttributes="Bold"
+             Grid.Row="4" Grid.Column="1"
+             HorizontalTextAlignment="End"/>
+
+      <Label Text="Viseetazni" FontSize="20" Grid.Row="5" Grid.Column="0" />
+      <Label Text="{Binding Stan.ViseEtazni}"
+             FontSize="20" FontAttributes="Bold"
+             Grid.Row="5" Grid.Column="1"
+             HorizontalTextAlignment="End"/>
       
     </Grid>
     

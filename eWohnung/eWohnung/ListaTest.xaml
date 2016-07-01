@@ -6,7 +6,7 @@
              Title="List">
 
   <StackLayout>
-    
+
     <StackLayout IsVisible="{Binding IsConnected}">
 
       <SearchBar x:Name="AlenSearchBar"
@@ -14,50 +14,52 @@
                Unfocused="VisualElement_OnUnfocused"
                TextChanged="AlenSearchBar_OnTextChanged"/>
 
-      <ListView x:Name="AlenTestLista" SeparatorVisibility="Default" SeparatorColor="#F3E8E8" ItemsSource="{Binding ListaStanova}"
-                RowHeight="60" CachingStrategy="RetainElement" ItemTapped="AlenTestLista_OnItemTapped">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ViewCell>
-              <Grid>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="*" />
-                  <ColumnDefinition Width="4*" />
-                  <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+      <StackLayout Padding="5">
+        <ListView x:Name="AlenTestLista" SeparatorVisibility="Default" SeparatorColor="#F3E8E8"
+                  ItemsSource="{Binding ListaStanova}" RowHeight="60"
+                  CachingStrategy="RetainElement" ItemTapped="AlenTestLista_OnItemTapped" >
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
 
-                <Image Source="stan_slika_test2.jpg"
-                       Aspect="AspectFill"  />
+                  <Image Source="stan_slika_test2.jpg"
+                         Aspect="AspectFill"  />
 
-                <StackLayout Grid.Column="1"
-                             Spacing="0"
-                             TranslationX="5"
-                             HorizontalOptions="StartAndExpand"
-                             VerticalOptions="CenterAndExpand">
+                  <StackLayout Grid.Column="1"
+                               Spacing="0"
+                               TranslationX="5"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="CenterAndExpand">
 
-                  <Label Text="{Binding UkupnaKvadratura, StringFormat='Stan {0} kvadrata'}"
-                          FontSize="20"
-                          HorizontalTextAlignment="Start" TextColor="#F3E8E8"/>
+                    <Label Text="{Binding UkupnaKvadratura, StringFormat='Stan {0} kvadrata'}"
+                            FontSize="20"
+                            HorizontalTextAlignment="Start" TextColor="#F3E8E8"/>
 
-                  <Label Text="{Binding UlicaBroj, StringFormat='Ulica Neka br. {0}'}"
-                          FontSize="15"
-                          HorizontalTextAlignment="Start" TextColor="#F3E8E8" />
+                    <Label Text="{Binding UlicaBroj, StringFormat='Ulica Neka br. {0}'}"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start" TextColor="#F3E8E8" />
 
-                </StackLayout>
+                  </StackLayout>
 
-                <Image Grid.Column="2"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="EndAndExpand"
-                       Source="arrow_right.png"
-                       Scale="0.25"
-                       TranslationX="5"/>
+                  <Image Grid.Column="2"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="EndAndExpand"
+                         Source="arrow_right.png"
+                         Scale="0.25"
+                         TranslationX="5"/>
 
-              </Grid>
-            </ViewCell>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-
+                </Grid>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
     </StackLayout>
 
     <Label Text="Please check your connection!" IsVisible="{Binding IsConnected, Converter={StaticResource NegateBoolean}}"

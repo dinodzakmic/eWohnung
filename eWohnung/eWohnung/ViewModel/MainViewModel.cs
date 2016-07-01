@@ -43,6 +43,19 @@ namespace eWohnung.ViewModel
             }
         }
         #endregion
+        #region IsConnected
+        private bool _isConnected;
+
+        public bool IsConnected
+        {
+            get { return _isConnected; }
+            set
+            {
+                _isConnected = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
         #region QuickAction
         public QuickAccess QuickAction { get; set; }
         #endregion
@@ -67,52 +80,42 @@ namespace eWohnung.ViewModel
             if (!IsEnabled) return;
 
             QuickAction = quickAction;
-            await App.Locator.Stan.DodajStanove();
-            await ExecuteNavigation(new ListaTest());
+            await ExecuteNavigation(new ListaTest(), App.Locator.Stan.DodajStanove());
+            //await App.Locator.Stan.DodajStanove();
         }
         private async Task GoToMap(QuickAccess quickAction)
         {
             if (!IsEnabled) return;
 
             QuickAction = quickAction;
-            await ExecuteNavigation(new MapaTest());
+            await ExecuteNavigation(new MapaTest(), null);
 
         }
         private async Task GoToSearch(QuickAccess quickAction)
         {
             if (!IsEnabled) return;
 
-            IsEnabled = false;
-            await quickAction.FadeTo(0.5, 500, Easing.BounceIn);
-            IsLoading = true;            
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            await App.NavPage.Navigation.PushAsync(new SearchPage());
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            IsLoading = false;
-            quickAction.Opacity = 1;
-            IsEnabled = true;          
+            QuickAction = quickAction;
+            await ExecuteNavigation(new SearchPage(), null);
         }
         private async Task GoToSettings(QuickAccess quickAction)
         {
             if (!IsEnabled) return;
 
-            IsEnabled = false;
-            await quickAction.FadeTo(0.5, 500, Easing.BounceIn);
-            IsLoading = true;
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            await App.NavPage.Navigation.PushAsync(new SettingsPage());
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            IsLoading = false;
-            quickAction.Opacity = 1;
-            IsEnabled = true;
+            QuickAction = quickAction;
+            await ExecuteNavigation(new SettingsPage(), null);
         }
 
-        private async Task ExecuteNavigation(Page page)
+        private async Task ExecuteNavigation(Page page, Task actionTask)
         {
             IsEnabled = false;
             await QuickAction.FadeTo(0.5, 500, Easing.BounceIn);
             IsLoading = true;
             await Task.Delay(TimeSpan.FromMilliseconds(100));
+
+            if (actionTask != null)
+                await actionTask;
+
             CancellationToken canToken = new CancellationToken();
             await App.NavPage.Navigation.PushAsync(page).ContinueWith(async t =>
             {

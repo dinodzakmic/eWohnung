@@ -119,6 +119,7 @@ namespace eWohnung.ViewModel
                 if (we.Status == WebExceptionStatus.ConnectFailure)
                 {
                     IsLoading = false;
+                    IsConnected = false;
                     await App.NavPage.CurrentPage.DisplayAlert("Error", "Check your connection!", "OK");
                 }
             }
