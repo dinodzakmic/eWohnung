@@ -15,11 +15,19 @@
         <RowDefinition Height="1.5*" />
       </Grid.RowDefinitions>
 
-      <Entry Grid.Row="0" x:Name="UsernameEntry" Placeholder="Username" WidthRequest="80" />
-      <Entry Grid.Row="1" x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" WidthRequest="80" />
-      <Button x:Name="ButtonLogin" Grid.Row="2" Text="Login" Clicked="Button_OnClicked" WidthRequest="80" 
+      <Entry Grid.Row="0" x:Name="UsernameEntry" Text="{Binding Username}"
+             Placeholder="Username"
+             WidthRequest="80" />
+      
+      <Entry Grid.Row="1" x:Name="PasswordEntry" Text="{Binding Password}"
+             Placeholder="Password"
+             IsPassword="True"
+             WidthRequest="80" />
+      <Button x:Name="ButtonLogin" Grid.Row="2" Text="Login" WidthRequest="80" 
               IsVisible="{Binding IsLoading, Converter={StaticResource NegateBoolean}}"
-              TextColor="#812013" BackgroundColor="#F3E8E8"/>
+              TextColor="#812013" BackgroundColor="#F3E8E8"
+              Command="{Binding LoginCommand}"/>
+      <!--Clicked="Button_OnClicked"-->
 
       <ActivityIndicator x:Name="ActivityIndicator" Grid.Row="2" Scale="1" IsRunning="{Binding IsLoading}" />
     </Grid>

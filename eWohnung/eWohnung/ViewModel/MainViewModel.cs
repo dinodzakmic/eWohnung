@@ -50,7 +50,6 @@ namespace eWohnung.ViewModel
         public ICommand GoToSearchCommand { get; set; }
         public ICommand GoToSettingsCommand { get; set; }
 
-
         #endregion
 
         public MainViewModel()
@@ -96,10 +95,9 @@ namespace eWohnung.ViewModel
 
             IsEnabled = false;
             await quickAction.FadeTo(0.5, 500, Easing.BounceIn);
-            IsLoading = true;
-            await LoadStan();
+            IsLoading = true;            
             await Task.Delay(TimeSpan.FromMilliseconds(100));
-            await App.NavPage.Navigation.PushAsync(new DetaljiStana());
+            await App.NavPage.Navigation.PushAsync(new SearchPage());
             await Task.Delay(TimeSpan.FromMilliseconds(100));
             IsLoading = false;
             quickAction.Opacity = 1;
@@ -111,33 +109,13 @@ namespace eWohnung.ViewModel
 
             IsEnabled = false;
             await quickAction.FadeTo(0.5, 500, Easing.BounceIn);
-            //IsLoading = true;
-            await Task.Delay(TimeSpan.FromSeconds(1));
-            //IsLoading = false;
+            IsLoading = true;
+            await Task.Delay(TimeSpan.FromMilliseconds(100));
+            await App.NavPage.Navigation.PushAsync(new SettingsPage());
+            await Task.Delay(TimeSpan.FromMilliseconds(100));
+            IsLoading = false;
             quickAction.Opacity = 1;
             IsEnabled = true;
-            await App.NavPage.DisplayAlert("ToDo", "This needs to be implemented", "OK");
-        }
-
-
-        public StanTest Stan { get; private set; }
-
-        private async Task LoadStan()
-        {
-            try
-            {
-                string url = @"http://81.169.153.223:8080/eWohnung-service/service/stanovi/1";
-                var json = await new HttpClient().GetStringAsync(url);
-
-                //var test = JsonConvert.DeserializeObject<List<StanTest>>(json);
-
-                Stan = JsonConvert.DeserializeObject<StanTest>(json);
-            }
-            catch (WebException we)
-            {
-                if (we.Status == WebExceptionStatus.ConnectFailure)
-                    await App.NavPage.CurrentPage.DisplayAlert("Greska", "Provjerite konekciju!", "OK");
-            }
-        }
+        }       
     }
 }

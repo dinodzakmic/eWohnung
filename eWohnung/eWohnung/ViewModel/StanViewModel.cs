@@ -11,6 +11,7 @@ namespace eWohnung.ViewModel
     public class StanViewModel : MainViewModel
     {
         public List<StanTest> ListaStanova { get; set; }
+        public StanTest Stan { get; set; }
 
         public StanViewModel()
         {

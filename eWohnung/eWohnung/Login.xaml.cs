@@ -17,11 +17,11 @@ namespace eWohnung
             InitializeComponent();
         }
 
-        private async void Button_OnClicked(object sender, EventArgs e)
-        {
-            var user = new User(UsernameEntry.Text, PasswordEntry.Text);
-            await App.Locator.Login.LoginTask(user);
-        }
+        //private async void Button_OnClicked(object sender, EventArgs e)
+        //{
+        //    var user = new User(UsernameEntry.Text, PasswordEntry.Text);
+        //    await App.Locator.Login.LoginTask(user);
+        //}
 
         protected override void OnDisappearing()
         {

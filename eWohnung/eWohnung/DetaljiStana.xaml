@@ -2,13 +2,49 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="eWohnung.DetaljiStana"
-             BindingContext="{Binding Source={StaticResource Locator}, Path=Main}">
+             BindingContext="{Binding Source={StaticResource Locator}, Path=Stan}">
   
   <StackLayout Padding="10">
-    <Label Text="{Binding Stan.SifraStana}" FontSize="20"/>
-    <Label Text="{Binding Stan.BrojStanaUZgradi}" FontSize="20"/>
-    <Label Text="{Binding Stan.UlicaBroj}" FontSize="20"/>
-    <Label Text="{Binding Stan.UkupnaKvadratura}" FontSize="20"/>  
+    <Image Source="stan_slika_test2.jpg"
+           Aspect="AspectFill" 
+           HorizontalOptions="FillAndExpand" />
+    
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Label Text="Broj soba" FontSize="20" Grid.Row="0" Grid.Column="0" />
+      <Label Text="{Binding Stan.BrojSoba}" FontSize="20" 
+             Grid.Row="0" Grid.Column="1"
+             HorizontalTextAlignment="Center"/>
+
+      <Label Text="Broj stana u zgradi" FontSize="20" Grid.Row="1" Grid.Column="0" />
+      <Label Text="{Binding Stan.BrojStanaUZgradi}" FontSize="20" 
+             Grid.Row="1" Grid.Column="1"
+             HorizontalTextAlignment="Center"/>
+
+      <Label Text="Broj ulice" FontSize="20" Grid.Row="2" Grid.Column="0" />
+      <Label Text="{Binding Stan.UlicaBroj}" FontSize="20" 
+             Grid.Row="2" Grid.Column="1"
+             HorizontalTextAlignment="Center"/>
+
+      <Label Text="Kvadratura" FontSize="20" Grid.Row="3" Grid.Column="0" />
+      <Label Text="{Binding Stan.UkupnaKvadratura}" FontSize="20" 
+             Grid.Row="3" Grid.Column="1"
+             HorizontalTextAlignment="Center"/>
+      
+    </Grid>
+    
+   
+    
   </StackLayout>
   
 </ContentPage>

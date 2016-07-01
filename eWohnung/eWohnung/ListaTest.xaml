@@ -12,7 +12,7 @@
              TextChanged="AlenSearchBar_OnTextChanged"/>
           
   <ListView x:Name="AlenTestLista" SeparatorVisibility="Default" SeparatorColor="#F3E8E8" ItemsSource="{Binding ListaStanova}"
-            RowHeight="80" CachingStrategy="RetainElement" >
+            RowHeight="60" CachingStrategy="RetainElement" ItemTapped="AlenTestLista_OnItemTapped" >
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
@@ -32,11 +32,11 @@
                          HorizontalOptions="StartAndExpand"
                          VerticalOptions="CenterAndExpand">
 
-              <Label Text="{Binding SifraStana}"
+              <Label Text="{Binding UkupnaKvadratura, StringFormat='Stan {0} kvadrata'}"
                       FontSize="20"
                       HorizontalTextAlignment="Start" TextColor="#F3E8E8"/>
 
-              <Label Text="{Binding UlicaBroj}"
+              <Label Text="{Binding UlicaBroj, StringFormat='Ulica Neka br. {0}'}"
                       FontSize="15"
                       HorizontalTextAlignment="Start" TextColor="#F3E8E8" />
 

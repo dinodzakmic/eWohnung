@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using eWohnung.Model;
 using Xamarin.Forms;
 
 namespace eWohnung
@@ -28,6 +29,13 @@ namespace eWohnung
             if(string.IsNullOrEmpty(e.NewTextValue))
                 VisualElement_OnUnfocused(sender, null);
 
+        }
+
+        private async void AlenTestLista_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            AlenTestLista.SelectedItem = null;
+            App.Locator.Stan.Stan = e.Item as StanTest;
+            await App.NavPage.Navigation.PushAsync(new DetaljiStana());
         }
     }
 }
